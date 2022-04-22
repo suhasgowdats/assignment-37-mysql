@@ -1,0 +1,20 @@
+1). Find all the topics and tasks which are thought in the month of October
+
+select * from zenclass where tasksub like '%10%';
+
+
+2). Find all the company drives which appeared between 15 oct-2020 and 31-oct-2020
+
+select * from company where ddate between '2020-10-15' and '2020-10-30';
+
+3). Find all the company drives and students who are appeared for the placement.
+
+select * from zenclass z inner join company c on z.userid=c.userid where pstatus in('Placed', 'Not yet placed');
+
+4). Find the number of problems solved by the user in codekata
+
+select uname, Noofprobsolved from zenclass;
+
+6). Find the number of users who are absent and task is not submitted  between 15 oct-2020 and 31-oct-2020
+
+select * from zenclass where attendance = 'N' and (tasksub <= '2020-10-15' or tasksub >= '2020-10-30');
